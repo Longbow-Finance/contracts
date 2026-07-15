@@ -7,12 +7,12 @@
 Leveraged longs on `$LONG` with no borrowing, no shorts, and no tokens up front.
 Rewards are paid from a finite pre-funded reserve; losses feed the liquidity pool.
 
-[![CI](https://github.com/Longbow-Protocol/contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/Longbow-Protocol/contracts/actions/workflows/ci.yml)
+[![CI](https://github.com/Longbow-Finance/contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/Longbow-Finance/contracts/actions/workflows/ci.yml)
 ![Solidity](https://img.shields.io/badge/solidity-0.8.24-363636?logo=solidity)
 ![Foundry](https://img.shields.io/badge/built%20with-foundry-orange)
 ![License](https://img.shields.io/badge/license-MIT-c6f24e)
 
-[Website](https://longbow-protocol.xyz) · [Litepaper](https://longbow-protocol.xyz/litepaper) · [App & CLI](https://github.com/Longbow-Protocol/longbow) · [Explorer](https://robinhoodchain.blockscout.com)
+[Website](https://longbowfi.xyz) · [Litepaper](https://longbowfi.xyz/litepaper) · [App & CLI](https://github.com/Longbow-Finance/longbow) · [Explorer](https://robinhoodchain.blockscout.com)
 
 </div>
 
@@ -37,7 +37,7 @@ equity(P) = collateral × (1 + m × (P − P0) / P0)   // ETH returned on close 
 - **Solvent by construction.** Rewards can never exceed the earmarked reserve.
 - **Losses feed liquidity.** Liquidations and underwater shortfalls are zapped into locked LP.
 
-See the [litepaper](https://longbow-protocol.xyz/litepaper) for the full mechanism and worked examples.
+See the [litepaper](https://longbowfi.xyz/litepaper) for the full mechanism and worked examples.
 
 ## Architecture
 
@@ -63,7 +63,7 @@ lib/        forge-std, openzeppelin-contracts (submodules)
 Requires [Foundry](https://book.getfoundry.sh/getting-started/installation).
 
 ```bash
-git clone --recurse-submodules https://github.com/Longbow-Protocol/contracts.git
+git clone --recurse-submodules https://github.com/Longbow-Finance/contracts.git
 cd contracts
 forge build
 forge test
