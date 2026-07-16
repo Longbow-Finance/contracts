@@ -45,9 +45,10 @@ See the [litepaper](https://longbowfi.xyz/litepaper) for the full mechanism and 
 | --- | --- |
 | [`LongToken.sol`](src/LongToken.sol) | Fixed-supply ERC-20 (`ERC20` + `ERC20Permit`). 50% seeds the DEX LP, 50% the reward reserve. |
 | [`PositionManager.sol`](src/PositionManager.sol) | Core engine: open/close, collateral custody, reward earmarking, maintenance margin, liquidation. |
-| [`oracle/UniswapV2TwapOracle.sol`](src/oracle/UniswapV2TwapOracle.sol) | Manipulation-resistant time-weighted `ETH/LONG` price from the Uniswap V2 pair. |
-| [`periphery/UniswapV2LiquiditySink.sol`](src/periphery/UniswapV2LiquiditySink.sol) | Zaps forfeited ETH into the pool and burns the LP tokens — liquidity added permanently. |
-| [`interfaces/`](src/interfaces) | `IPriceOracle`, `ILiquiditySink`, and the Uniswap V2 interfaces. |
+| [`oracle/UniswapV3TwapOracle.sol`](src/oracle/UniswapV3TwapOracle.sol) | Manipulation-resistant `ETH/LONG` price read from the Uniswap V3 pool's built-in `observe()` TWAP (no keeper upkeep). |
+| [`periphery/UniswapV3LiquiditySink.sol`](src/periphery/UniswapV3LiquiditySink.sol) | Zaps forfeited ETH into a permanently locked full-range Uniswap V3 position — liquidity added forever. |
+| [`libraries/`](src/libraries) | 0.8-compatible `FullMath`, `TickMath`, and `OracleLibrary` (ports of Uniswap V3 math). |
+| [`interfaces/`](src/interfaces) | `IPriceOracle`, `ILiquiditySink`, and the Uniswap V3 interfaces. |
 
 ## Layout
 
@@ -100,8 +101,8 @@ Robinhood Chain (Arbitrum Orbit L2, chain id `4663`):
 | --- | --- |
 | `LongToken` | `TBD` |
 | `PositionManager` | `TBD` |
-| `UniswapV2TwapOracle` | `TBD` |
-| `UniswapV2LiquiditySink` | `TBD` |
+| `UniswapV3TwapOracle` | `TBD` |
+| `UniswapV3LiquiditySink` | `TBD` |
 
 ## Security
 
